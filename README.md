@@ -3,19 +3,17 @@
 ```
 sudo snap install lxd
 ```
+##Here need to assign storage pool name and flle system zfs also need to allocate store size (1GB Minimum) 
 ```
-Here need to assign storage pool name and flle system zfs also need to allocate store size (1GB Minimum) 
-
 sudo lxd init
-
 ```
 ## container profile create
 ```
 lxc profile create kubernetes
 lxc profile edit kubernetes
-
+```
 # Insert the below configuration
-
+```
 config:
   boot.autostart: "true"
   linux.kernel_modules: ip_vs,ip_vs_rr,ip_vs_wrr,ip_vs_sh,ip_tables,ip6_tables,netlink_diag,nf_nat,overlay,br_netfilter
@@ -53,28 +51,19 @@ lxc launch --profile default --profile kubernetes ubuntu:20.04 worker3
 ```
 
 ##Before run ansible commmand need to do few things .
-
 ##Login Every LXC Server and set the root password 
-
 #ssh premission root from outside
-```
+
 ```
 lxc exec master bash ;login every node
 passwd root          ;set password
-
-
+```
+```
 vi /etc/ssh/sshd_config
 PermitRootLogin yes  
 PasswordAuthenicaiton yes
 ```
-
-# login to the container to set password.
- lxc exec master bash
- ..
- ..
-
 ## Creating Kubernetes cluster using Ansible
-
 ##From Host Machine need to run ssh-keygen command before run ansible command.
 ##Other wise you will face unauthorized error or need to type every time password by using -k parameter.
 ```
