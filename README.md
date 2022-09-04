@@ -71,7 +71,6 @@ ssh-keygen
 ```
 
 ```
-```
 ansible-playbook add-users.yaml
 ansible-playbook install-prerequsites-k8s.yaml
 ansible-playbook install-master.yaml
