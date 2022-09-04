@@ -75,11 +75,13 @@ PasswordAuthenicaiton yes
 
 ## Creating Kubernetes cluster using Ansible
 
-##From Host Machine need to run ssh-keygen command before run ansible command. Other wise you will face unauthorized error or need to type every time password by using -k parameter.
+##From Host Machine need to run ssh-keygen command before run ansible command.
+##Other wise you will face unauthorized error or need to type every time password by using -k parameter.
 ```
 ssh-keygen   
 ```
 
+```
 ```
 ansible-playbook add-users.yaml
 ansible-playbook install-prerequsites-k8s.yaml
