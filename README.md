@@ -1,5 +1,4 @@
- bs23-task2
-
+##brainstation-task2
 ## LXD Installation
 ```
 sudo snap install lxd
@@ -55,9 +54,9 @@ lxc launch --profile default --profile kubernetes ubuntu:20.04 worker3
 
 ##Before run ansible commmand need to do few things .
 
-##Login Every LXC Server and set the root passwd 
+##Login Every LXC Server and set the root password 
 
-#ssh premission root  from outside
+#ssh premission root from outside
 ```
 ```
 lxc exec master bash ;login every node
